@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Exercices 1 Partie un peut compliquer. JanganedoCoding
+
+		// Déclaration de la variable dateactuelle qui prend la date actuelle
+		 var dateactuelle = new Date();
+		 //datenaiss prend la date de naissance saisi dans le prompt
+		 var datenaiss = prompt("Saisir votre date de naissance");
+		 //Recupération de l'année 
+         var an=datenaiss.substr(6,4); 
+         //recupération 
+         var mois=datenaiss.substr(3,2);
+         var jour= datenaiss.substr(0,2); 
+
+         var dateNaissance = new Date(an + "-" + mois + "-" + jour);
+
+         var age = dateactuelle.getFullYear() - dateNaissance.getFullYear();
+
+         var m = dateactuelle.getMonth() - dateNaissance.getMonth();
+         if (m < 0 || (m === 0 && dateactuelle.getDate() <dateNaissance.getDate())) {
+             age = age - 1;
+          }
+          alert("Votre age est : "+age);
+	</script>
+</body>
+</html>
